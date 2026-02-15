@@ -1,0 +1,235 @@
+<h1>Linux 0 to Hero</h1>
+            <div class="menu" style="text-align: center">
+
+                <div >
+                    <h2>1. Manage File & Directory</h2>
+                    <table border="3" cellpadding="4" style="margin: auto; border-collapse: collapse;">
+                        <tr><th>Command</th><th>Description</th></tr>
+                        <tr><td><b>ls</b></td><td><i>list all files/folder on current dir</i></td></tr>
+                        <tr><td><b>cd</b></td><td><i>changes directories(dir name)</i></td></tr>
+                        <tr><td><b>pwd</b></td><td><i>print current directories</i></td></tr>
+                        <tr><td><b>mkdir</b></td><td><i>create a directorie</i></td></tr>
+                        <tr><td><b>touch</b></td><td><i>create a file</i></td></tr>
+                        <tr><td><b>rm</b></td><td><i>remove files</i></td></tr>
+                        <tr><td><b>rmdir</b></td><td><i>remove directorie</i></td></tr>
+                        <tr><td><b>cp</b></td><td><i>copy file1 to file2</i></td></tr>
+                        <tr><td><b>mv</b></td><td><i>rename file_name new_name</i></td></tr>
+                        <tr><td><b>mv</b></td><td><i>move file to dir</i></td></tr>
+                        <tr><td><b>cat</b></td><td><i>view contents of file</i></td></tr>
+                        <tr><td><b>more</b></td><td><i>view connects of file1</i></td></tr>
+                        <tr><td><b>less</b></td><td><i>view contents of file1</i></td></tr>
+                        <tr><td><b>head</b></td><td><i>view contects by default top 10 line</i></td></tr>
+                        <tr><td><b>tail</b></td><td><i>view contects by default last 10 line</i></td></tr>
+                        <tr><td><b>tac</b></td><td><i>Connects display in reverse order</i></td></tr>
+                        <tr><td><b>vi / vim</b></td><td><i>Vim Editor (Powerful but Tricky) Vim → Servers, Kubernetes YAML, automation, pro working</i></td></tr>
+                        <tr><td><b>nano</b></td><td><i>Nano → Quick edits, configs, beginners</i></td></tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h2>2. Input Output Redirection</h2>
+                    <table  border="3" cellpadding="4" style="margin: auto; border-collapse: collapse;">
+                        <tr><th>Command</th><th>Description</th></tr>
+                        <tr><td><b>set -o noclobber</b></td><td><i>Set only Empy file</i></td></tr>
+                        <tr><td><b>set +o noclobber</b></td><td><i>Unset</i></td></tr>
+                        <tr><td><b>ls &gt; file.txt</b></td><td><i>Overwrite output</i></td></tr>
+                        <tr><td><b>ls &gt;&gt; file.txt</b></td><td><i>Appand output</i></td></tr>
+                        <tr><td><b>ls &gt; output.txt 2&gt;&amp;1</b></td><td><i>It redirects BOTH normal output and error output into one file called output.txt</i></td></tr>
+                        <tr><td><b>ls &gt;/dev/null 2&gt;&amp;1</b></td><td><i>No output, no errors, totally silent command</i></td></tr>
+                        <tr><td><b>&gt; file.txt</b></td><td><i>Remove all file contects</i></td></tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h2>3. Use Filters in file/words</h2>
+                    <table  border="3" cellpadding="4" style="margin: auto; border-collapse: collapse;">
+                        <tr><th>Command</th><th>Description</th></tr>
+                        <tr><td><b>wc</b></td><td><i>Count words</i></td></tr>
+                        <tr><td><b>grep</b></td><td><i>Grep command use to search pattern into any file or from any command</i></td></tr>
+                        <tr><td><b>cut</b></td><td><i>cut is used to extract specific columns or fields from text</i></td></tr>
+                        <tr><td><b>awk</b></td><td><i>awk is used to process text line-by-line and column-by-column</i></td></tr>
+                        <tr><td><b>sed</b></td><td><i>Printing, Find and Replace, Delete Operation, Before line we insert any thing, After line we insert any thing</i></td></tr>
+                        <tr><td><b>sort</b></td><td><i>sort arranges lines in order</i></td></tr>
+                        <tr><td><b>uniq</b></td><td><i>Important: uniq works only on already-sorted data</i></td></tr>
+                        <tr><td><b>find</b></td><td><i>Searches in real time through directories, Very powerful (permissions, size, time, delete, exec)</i></td></tr>
+                        <tr><td><b>locate</b></td><td><i>Searches from a pre-built database</i></td></tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h2>4. File Comprace & archive</h2>
+                    <table  border="3" cellpadding="4" style="margin: auto; border-collapse: collapse;">
+                        <tr><th>Command</th><th>Description</th></tr>
+                        <tr><td><b>gzip</b></td><td><i>Compresses files (fast)</i></td></tr>
+                        <tr><td><b>bzip2</b></td><td><i>Compresses files (better compression, slower)</i></td></tr>
+                        <tr><td><b>tar</b></td><td><i>Archives multiple files into one</i></td></tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h2>5. Networking</h2>
+                    <table  border="3" cellpadding="4" style="margin: auto; border-collapse: collapse;">
+                        <tr><th>Command</th><th>Description</th></tr>
+                        <tr><td><b>ping</b></td><td><i>ping host</i></td></tr>
+                        <tr><td><b>dig</b></td><td><i>git DNS for domain</i></td></tr>
+                        <tr><td><b>wget</b></td><td><i>Downloade file from internat</i></td></tr>
+                        <tr><td><b>curl</b></td><td><i>Output the webpage from url</i></td></tr>
+                        <tr><td><b>ssh</b></td><td><i>Connect the host as user</i></td></tr>
+                        <tr><td><b>ss</b></td><td><i></i></td></tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h2>6. Shell Explanation in linux</h2>
+                    <table  border="3" cellpadding="4" style="margin: auto; border-collapse: collapse;">
+                        <tr><th>Symbol</th><th>Description</th></tr>
+                        <tr><td><b>;</b></td><td><i>Semicolon operator</i></td></tr>
+                        <tr><td><b>&</b></td><td><i>Amphershand Operator</i></td></tr>
+                        <tr><td><b>?</b></td><td><i>Qustion maer operatio Depend on back command</i></td></tr>
+                        <tr><td><b>&&</b></td><td><i>Dubble amphersant control operator</i></td></tr>
+                        <tr><td><b>||</b></td><td><i>Dubble vertical bar operator</i></td></tr>
+                        <tr><td><b>#</b></td><td><i>Pound sing operator</i></td></tr>
+                        <tr><td><b>\</b></td><td><i>Escaping special charcture</i></td></tr>
+                        <tr><td><b>' '</b></td><td><i>Single quotes (remove spacial meaning of every char placed insider then)</i></td></tr>
+                        <tr><td><b>" "</b></td><td><i>Dubble quotes Remove the spacial meaning from all exept doller sing($) and backltics (` `)</i></td></tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h2>7. Permission and Security</h2>
+                    <table  border="3" cellpadding="4" style="margin: auto; border-collapse: collapse;">
+                        <tr><th>Command</th><th>Description</th></tr>
+                        <tr><td><b>chmod</b></td><td><i>Change permissino file/directory</i></td></tr>
+                        <tr><td><b>chown</b></td><td><i>Change file/directory ownership</i></td></tr>
+                        <tr><td><b>chgrp</b></td><td><i>Change file/directory ownership of group</i></td></tr>
+                        <tr><td><b>umask</b></td><td><i>set default permissino for new file</i></td></tr>
+                        <tr><td><b>setfacl</b></td><td><i>set file access controle list ACL</i></td></tr>
+                        <tr><td><b>getfacl</b></td><td><i>get file access controle list ACL</i></td></tr>
+                        <tr><td><b>sudo</b></td><td><i>Exacute command as superuser ROOT</i></td></tr>
+                        <tr><td><b>passwd</b></td><td><i>Change the user password</i></td></tr>
+                        <tr><td><b>gpasswd</b></td><td><i>Admin group password</i></td></tr>
+                        <tr><td><b>ss</b></td><td><i>Display sockit static for secure network connection</i></td></tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h2>8. Management user and group</h2>
+                    <table  border="3" cellpadding="4" style="margin: auto; border-collapse: collapse;">
+                        <tr><th>Command</th><th>Description</th></tr>
+                        <tr><td><b>whoami</b></td><td><i>Display current user</i></td></tr>
+                        <tr><td><b>id</b></td><td><i>User identity information</i></td></tr>
+                        <tr><td><b>who</b></td><td><i></i></td></tr>
+                        <tr><td><b>useradd</b></td><td><i>Create new user</i></td></tr>
+                        <tr><td><b>usermod</b></td><td><i>Modify user</i></td></tr>
+                        <tr><td><b>userdel</b></td><td><i>Delete user_name</i></td></tr>
+                        <tr><td><b>groupadd</b></td><td><i>	Create group</i></td></tr>
+                        <tr><td><b>groupmod</b></td><td><i></i></td></tr>
+                        <tr><td><b>groupdel</b></td><td><i>Delete group</i></td></tr>
+                        <tr><td><b>chage -l (user_name)</b></td><td><i></i></td></tr>
+                        <tr><td><b>passwd</b></td><td><i></i></td></tr>
+                        <tr><td><b>gpasswd</b></td><td><i></i></td></tr>
+                    </table>
+                </div>
+                
+                <div>
+                    <h2>9. Package Management</h2>
+                    <table  border="3" cellpadding="4" style="margin: auto; border-collapse: collapse;">
+                        <tr><th>Command</th><th>Description</th></tr>
+                        <tr><td><b>apt</b></td><td><i>Package management command for Debian-based systems</i></td></tr>
+                        <tr><td><b>apt update</b></td><td><i>Update package index</i></td></tr>
+                        <tr><td><b>apt upgrade</b></td><td><i>Upgrade installed packages</i></td></tr>
+                        <tr><td><b>apt install</b></td><td><i>Install a package</i></td></tr>
+                        <tr><td><b>apt remove</b></td><td><i>Remove a package</i></td></tr>
+                        <tr><td><b>yum</b></td><td><i>Package manager for RPM-based systems</i></td></tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h2>10. System Service and Daemon Management</h2>
+                    <table  border="3" cellpadding="4" style="margin: auto; border-collapse: collapse;">
+                        <tr><th>Command</th><th>Description</th></tr>
+                        <tr><td><b>systemctl</b></td><td><i>Control system services</i></td></tr>
+                        <tr><td><b>systemctl start service</b></td><td><i>Start a service</i></td></tr>
+                        <tr><td><b>systemctl stop service</b></td><td><i>Stop a service</i></td></tr>
+                        <tr><td><b>systemctl restart service</b></td><td><i>Restart a service</i></td></tr>
+                        <tr><td><b>systemctl status service</b></td><td><i>Check service status</i></td></tr>
+                        <tr><td><b>service</b></td><td><i>Legacy service management command</i></td></tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h2>11. Scheduling tasks </h2>
+                    <table  border="3" cellpadding="4" style="margin: auto; border-collapse: collapse;">
+                        <tr><th>Command</th><th>Description</th></tr>
+                        <tr><td><b>crontab -e</b></td><td><i>Edit user cron jobs</i></td></tr>
+                        <tr><td><b>crontab -l</b></td><td><i>List cron jobs</i></td></tr>
+                        <tr><td><b>crontab -r</b></td><td><i>Remove cron jobs</i></td></tr>
+                        <tr><td><b>cron</b></td><td><i>Daemon to execute scheduled commands</i></td></tr>
+                        <tr><td><b>at</b></td><td><i>Schedule a command to run once</i></td></tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h2>12. File Permission and Security</h2>
+                    <table  border="3" cellpadding="4" style="margin: auto; border-collapse: collapse;">
+                        <tr><th>Command</th><th>Description</th></tr>
+                        <tr><td><b>ls -l</b></td><td><i>Display file permissions</i></td></tr>
+                        <tr><td><b>chmod 755</b></td><td><i>Set read, write, execute permissions</i></td></tr>
+                        <tr><td><b>chattr</b></td><td><i>Change file attributes</i></td></tr>
+                        <tr><td><b>lsattr</b></td><td><i>List file attributes</i></td></tr>
+                        <tr><td><b>semanage</b></td><td><i>SELinux policy management</i></td></tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h2>13. System Backup and Restore</h2>
+                    <table  border="3" cellpadding="4" style="margin: auto; border-collapse: collapse;">
+                        <tr><th>Command</th><th>Description</th></tr>
+                        <tr><td><b>tar</b></td><td><i>Create and extract backup archives</i></td></tr>
+                        <tr><td><b>rsync</b></td><td><i>Fast file synchronization and backup</i></td></tr>
+                        <tr><td><b>dd</b></td><td><i>Disk cloning and backup</i></td></tr>
+                        <tr><td><b>scp</b></td><td><i>Secure copy files between systems</i></td></tr>
+                        <tr><td><b>restore</b></td><td><i>Restore files from backup</i></td></tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h2>14. System Dignostic and Trobleshooting</h2>
+                    <table  border="3" cellpadding="4" style="margin: auto; border-collapse: collapse;">
+                        <tr><th>Command</th><th>Description</th></tr>
+                        <tr><td><b>top</b></td><td><i>Display running processes</i></td></tr>
+                        <tr><td><b>htop</b></td><td><i>Interactive process viewer</i></td></tr>
+                        <tr><td><b>free</b></td><td><i>Display memory usage</i></td></tr>
+                        <tr><td><b>df</b></td><td><i>Check disk space usage</i></td></tr>
+                        <tr><td><b>du</b></td><td><i>Estimate file space usage</i></td></tr>
+                        <tr><td><b>dmesg</b></td><td><i>Kernel ring buffer messages</i></td></tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h2>15. Networking & Remote Management</h2>
+                    <table  border="3" cellpadding="4" style="margin: auto; border-collapse: collapse;">
+                        <tr><th>Command</th><th>Description</th></tr>
+                        <tr><td><b>ifconfig</b></td><td><i>Configure network interfaces</i></td></tr>
+                        <tr><td><b>ip</b></td><td><i>Modern network configuration tool</i></td></tr>
+                        <tr><td><b>netstat</b></td><td><i>Network statistics</i></td></tr>
+                        <tr><td><b>nmap</b></td><td><i>Network scanning and discovery</i></td></tr>
+                        <tr><td><b>scp</b></td><td><i>Secure remote file transfer</i></td></tr>
+                        <tr><td><b>ssh-keygen</b></td><td><i>Generate SSH keys</i></td></tr>
+                    </table>
+                </div>
+
+                <div >
+                    <h2>16. System Shortdown and Reboot</h2>
+                    <table  border="3" cellpadding="4" style="margin: auto; border-collapse: collapse;">
+                        <tr><th>Command</th><th>Description</th></tr>
+                        <tr><td><b>shutdown</b></td><td><i>Shut down the system</i></td></tr>
+                        <tr><td><b>shutdown -r</b></td><td><i>Reboot the system</i></td></tr>
+                        <tr><td><b>reboot</b></td><td><i>Restart the system immediately</i></td></tr>
+                        <tr><td><b>poweroff</b></td><td><i>Power off the system</i></td></tr>
+                        <tr><td><b>init 0</b></td><td><i>Shutdown using init system</i></td></tr>
+                        <tr><td><b>init 6</b></td><td><i>Reboot using init system</i></td></tr>
+                    </table>
+                </div>
+
+            </div>

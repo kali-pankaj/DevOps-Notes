@@ -1,0 +1,361 @@
+<div>
+    <h2>GitHub Zero to Hero</h2>
+    <table>
+        <div>
+            <tr>
+                <h3>1. Basics of GitHub Commands</h3>
+                <ul>
+                    <li><strong>git init</strong>: Initializes a new Git repository in current directory.</li>
+                    <li><strong>git clone [url]</strong>: Clones an existing repository from a URL to the local machine.</li>
+                    <li><strong>git status</strong>: Shows the status of changes in the working directory status (which file is modified staged etc.)</li>
+                    <li><strong>git add [file]</strong>: Stages changes for the next commit.</li>
+                    <li><strong>git commit -m "message"</strong>: Commits staged changes with a message.</li>
+                    <li><strong>git push</strong>: Pushes commits to a remote repository.</li>
+                    <li><strong>git pull</strong>: Fetches and merges changes from a remote repository.</li>
+                    <li><strong>git fetch</strong>: Fetches changes from a remote repository without merging them.</li>
+                    <li><strong>git merge [branch]</strong>: Merges changes from a specific branch into the current branch.</li>
+                    <li><strong>git log</strong>: Shows the commit history of the repository.</li>
+                    <li><strong>git diff</strong>: Shows the differences between staged and unstaged changes.</li>
+                </ul>
+            </tr>
+        </div>
+
+        <div>
+            <tr>
+                <h3>2. Branching Commands (Managing Branches)</h3>
+                <ul>
+                    <li><strong>git branch</strong>: Lists all local branches in the repository.</li>
+                    <li><strong>git branch [branch-name]</strong>: Creates a new branch with the given name.</li>
+                    <li><strong>git checkout [branch-name]</strong>: Switches to the specified branch.</li>
+                    <li><strong>git checkout -b [branch-name]</strong>: Creates and switches to a new branch with the given name.</li>
+                    <li><strong>git merge [branch-name]</strong>: Merges changes from the specified branch into the current branch.</li>
+                    <li><strong>git rebase [branch-name]</strong>: Reapplies commits from the current branch on top of the specified branch.</li>
+                    <li><strong>git branch -d [branch-name]</strong>: Deletes the specified local branch.</li>
+                    <li><strong>git branch -D [branch-name]</strong>: Force deletes the specified local branch.</li>
+                    <li><strong>git remote set-head origin [branch-name]</strong>: Sets the default branch for a remote repository.</li>
+                    <li><strong>git delete [branch-name]</strong>: Deletes the specified local branch.</li>
+                </ul>
+            </tr>
+        </div>
+
+        <div>
+            <tr>
+                <h3>3. Remote Commands (Managing Remote and Syncing with the cloud)</h3>
+                <ul>
+                    <li><strong>git remote -v</strong>: Lists all configured remote repositories and their URLs.</li>
+                    <li><strong>git remote add [name] [url]</strong>: Adds a new remote repository with the specified name and URL.</li>
+                    <li><strong>git remote remove [name]</strong>: Removes the specified remote repository.</li>
+                    <li><strong>git push [remote] [branch]</strong>: Pushes the specified branch to the specified remote repository.</li>
+                    <li><strong>git push -u [remote] [branch]</strong>: Pushes the specified branch to the specified remote repository and sets the upstream tracking.</li>
+                    <li><strong>git pull [remote] [branch]</strong>: Fetches and merges changes from the specified branch of the specified remote repository.</li>
+                    <li><strong>git fetch [remote]</strong>: Fetches changes from the specified remote repository without merging them.</li>
+                    <li><strong>git remote show [remote-name]</strong>: Shows information about the specified remote repository.</li>
+                </ul>
+            </tr>
+        </div>
+
+        <div>
+            <tr>
+                <h3>4. Staging and Committing (managing changes in the working directory)</h3>
+                <ul>
+                    <li><strong>git add [file]</strong>: Stages changes for the next commit.</li>
+                    <li><strong>git add -A</strong>: Stages all changes (modified, deleted, and new files) for the next commit.</li>
+                    <li><strong>git reset [file]</strong>: Unstages changes for the next commit.</li>
+                    <li><strong>git commit --amend</strong>: Amends the last commit with staged changes.</li>
+                    <li><strong>git commit --all</strong>: Commits all changes (modified, deleted, and new files) with a default message.</li>
+                    <li><strong>git commit -a</strong>: Commits all changes (modified, deleted, and new files) with a default message.</li>
+                    <li><strong>git commit --no-verify</strong>: Commits staged changes without running pre-commit hooks.</li>
+                    <li><strong>git reset --soft HEAD~1</strong>: Resets the last commit but keeps changes staged.</li>
+                    <li><strong>git reset --hard HEAD~1</strong>: Resets the last commit and discards all changes.</li>
+                    <li><strong>git commit -m "message"</strong>: Commits staged changes with a message.</li>
+                    <li><strong>git status</strong>: Shows the status of files in the working directory and staging area.</li>
+                    <li><strong>git diff [file]</strong>: Shows differences between staged and unstaged changes in a specific file.</li>
+                </ul>
+            </tr>
+        </div>
+
+         <div>
+            <tr>
+                <h3>5. Viewing and Comparing Changes (inspecting changes) </h3>
+                <ul>
+                    <li><strong>git diff</strong>: Shows differences between the working directory and the staging area.</li>
+                    <li><strong>git diff --staged</strong>: Shows differences between the staging area and the last commit.</li>
+                    <li><strong>git log</strong>: Shows the commit history.</li>
+                    <li><strong>git log --oneline</strong>: Shows the commit history in a compact format.</li>
+                    <li><strong>git log --graph</strong>: Shows the commit history as a graph.</li>
+                    <li><strong>git show [commit]</strong>: Shows details of a specific commit.</li>
+                    <li><strong>git diff HEAD~1 HEAD</strong>: Shows differences between the last two commits.</li>
+                    <li><strong>git log --author="name"</strong>: Shows commits by a specific author.</li>
+                    <li><strong>git log --since="date"</strong>: Shows commits since a specific date.</li>
+                    <li><strong>git blame [file]</strong>: Shows the author of each line in a file.</li>
+                </ul>
+            </tr>
+        </div>
+
+        <div>
+            <tr>
+                <h3>6. Reverting and Resetting Changes </h3>
+                <ul>
+                    <li><strong>git reset --soft HEAD~1</strong>: Resets the last commit but keeps changes staged.</li>
+                    <li><strong>git reset --hard HEAD~1</strong>: Resets the last commit and discards all changes.</li>
+                    <li><strong>git reset [commit]</strong>: Resets the current branch to a specific commit.</li>
+                    <li><strong>git revert [commit]</strong>: Creates a new commit that undoes changes from a previous commit.</li>
+                    <li><strong>git clean -f</strong>: Removes untracked files from the working directory.</li>
+                    <li><strong>git clean -fd</strong>: Removes untracked files and directories from the working directory.</li>
+                    <li><strong>git restore --staged [file]</strong>: Unstages a specific file from the staging area.</li>
+                    <li><strong>git reset --mixed HEAD~1</strong>: Resets the last commit but keeps changes in the working directory.</li>
+                    <li><strong>git reset --merge HEAD~1</strong>: Resets the last commit and tries to preserve changes in the working directory.</li>
+                </ul>
+            </tr>
+        </div>
+
+        <div>
+            <tr>
+                <h3>7. Stashing Changes (Temporary saving of changes)</h3>
+                <ul>
+                    <li><strong>git stash</strong>: Stashes all changes in the working directory.</li>
+                    <li><strong>git stash save "message"</strong>: Stashes changes with a custom message.</li>
+                    <li><strong>git stash list</strong>: Lists all stashed changes.</li>
+                    <li><strong>git stash show</strong>: Shows the details of the most recent stash.</li>
+                    <li><strong>git stash apply</strong>: Applies the most recent stash to the working directory.</li>
+                    <li><strong>git stash pop</strong>: Applies the most recent stash and removes it from the list.</li>
+                    <li><strong>git stash drop</strong>: Removes the most recent stash from the list.</li>
+                    <li><strong>git stash clear</strong>: Removes all stashed changes.</li>
+                    <li><strong>git stash drop [stash]</strong>: Removes a specific stash from the list.</li>
+                    <li><strong>git stash branch [branchname] [stash]</strong>: Creates a new branch and applies a specific stash to it.</li>
+                </ul>
+            </tr>
+        </div>
+
+        <div>
+            <tr>
+                <h3>8. Tag (Managing versions of your code)</h3>
+                <ul>
+                    <li><strong>git tag</strong>: Lists all tags in the repository.</li>
+                    <li><strong>git tag [tag-name]</strong>: Creates a new tag with the specified name.</li>
+                    <li><strong>git tag -d [tag-name]</strong>: Deletes the specified tag.</li>
+                    <li><strong>git tag -a [tag-name] -m "message"</strong>: Creates an annotated tag with a message.</li>
+                    <li><strong>git push [remote] [tag-name]</strong>: Pushes a specific tag to a remote repository.</li>
+                    <li><strong>git push --tags</strong>: Pushes all tags to a remote repository.</li>
+                    <li><strong>git show [tag-name]</strong>: Shows details of a specific tag.</li>
+                    <li><strong>git checkout [tag-name]</strong>: Checks out a specific tag (detached HEAD state).</li>
+                    <li><strong>git tag -l "pattern"</strong>: Lists tags that match a specific pattern.</li>
+                    <li><strong>git fetch --tags</strong>: Fetches all tags from the remote repository.</li>
+                </ul>
+            </tr>
+        </div>
+
+        <div>
+            <tr>
+                <h3>9. Git Config and Info (configuration and repository information)</h3>
+                <ul>
+                    <li><strong>git config --global user.name "name"</strong>: Sets the global username for Git commits.</li>
+                    <li><strong>git config --global user.email "email"</strong>: Sets the global email for Git commits.</li>
+                    <li><strong>git config --list</strong>: Lists all Git configuration settings.</li>
+                    <li><strong>git config --global core.editor [editor]</strong>: Sets the default text editor for Git commands.</li>
+                    <li><strong>git config --global merge.tool [tool]</strong>: Sets the default merge tool for Git.</li>
+                    <li><strong>git config --global diff.tool [tool]</strong>: Sets the default diff tool for Git.</li>
+                    <li><strong>git config --global alias.[alias-name] [command]</strong>: Creates a custom alias for a Git command.</li>
+                    <li><strong>git rev-parse HEAD</strong>: Shows the commit hash of the current HEAD.</li>
+                    <li><strong>git rev-parse --abbrev-ref HEAD</strong>: Shows the name of the current branch.</li>
+                    <li><strong>git config --global color.ui auto</strong>: Enables colored output in Git commands.</li>
+                    <li><strong>git config --global alias.st status</strong>: Creates an alias for `git status`.</li>
+                </ul>
+            </tr>
+        </div>
+
+        <div>
+            <tr>
+                <h3>10. Git Aliases (Custom Commands)</h3>
+                <ul>
+                    <li><strong>git config --global alias.[alias-name] [command]</strong>: Creates a custom alias for a Git command.</li>
+                    <li><strong>git st</strong>: Alias for `git status` (if configured).</li>
+                    <li><strong>git co</strong>: Alias for `git checkout` (if configured).</li>
+                    <li><strong>git br</strong>: Alias for `git branch` (if configured).</li>
+                    <li><strong>git ci</strong>: Alias for `git commit` (if configured).</li>
+                    <li><strong>git lg</strong>: Alias for a custom log format (if configured).</li>
+                    <li><strong>git amend</strong>: Alias for `git commit --amend` (if configured).</li>
+                    <li><strong>git unstage</strong>: Alias for `git reset [file]` (if configured).</li>
+                    <li><strong>git last</strong>: Alias for `git log -1 HEAD` (if configured).</li>
+                    <li><strong>git graph</strong>: Alias for a custom log graph format (if configured).</li>
+                    <li><strong>git clean -n</strong>: Shows what files would be removed by `git clean` without actually removing them.</li>
+                    <li><strong>git clean -f</strong>: Removes untracked files from the working directory.</li>
+                    <li><strong>git clean -fd</strong>: Removes untracked files and directories from the working directory.</li>
+                    <li><strong>git gc</strong>: Cleans up unnecessary files and optimizes the local repository.</li>
+                </ul>
+            </tr>
+        </div>
+
+        <div>
+            <tr>
+                <h3>11. Git Hooks (Automated scripts triggered by Git actions)</h3>
+                <ul>
+                    <li><strong>git init</strong>: Initializes a new Git repository.</li>
+                    <li><strong>git pre-commit</strong>: Runs before a commit is created.</li>
+                    <li><strong>git post-commit</strong>: Runs after a commit is created.</li>
+                    <li><strong>git post-merge</strong>: Runs after a merge is completed.</li>
+                </ul>
+            </tr>
+        </div>
+
+        <div>
+            <tr>
+                <h3>12. Git submodule (Managing external repositories within a a project)</h3>
+                <ul>
+                    <li><strong>git submodule add [repository-url] [path]</strong>: Adds a new submodule to the repository.</li>
+                    <li><strong>git submodule update --init</strong>: Initializes and updates all submodules.</li>
+                    <li><strong>git submodule update --remote</strong>: Updates all submodules to the latest commit from their respective remote repositories.</li>
+                    <li><strong>git submodule status</strong>: Shows the current status of all submodules.</li>
+                    <li><strong>git submodule foreach [command]</strong>: Runs a command in each submodule.</li>
+                    <li><strong>git submodule deinit [path]</strong>: Deinitializes a specific submodule.</li>
+                    <li><strong>git rm --cached [path]</strong>: Removes a submodule from the index (but not from the working directory).</li>
+                    <li><strong>git commit -m "message"</strong>: Commits changes related to submodules with a message.</li>
+                    <li><strong>git push</strong>: Pushes changes related to submodules to the remote repository.</li>
+                    <li><strong>git submodule init</strong>: Initializes submodules in the working directory.</li>
+                    <li><strong>git submodule update</strong>: Updates submodules to the latest commit in their respective repositories.</li>
+
+                </ul>
+            </tr>
+        </div>
+
+         <div>
+            <tr>
+                <h3>13. Git Workflow commands (working with other and managing collaboration)</h3>
+                <ul>
+                    <li><strong>git pull</strong>: Fetches and merges changes from a remote repository.</li>
+                    <li><strong>git push</strong>: Pushes commits to a remote repository.</li>
+                    <li><strong>git fetch</strong>: Fetches changes from a remote repository without merging them.</li>
+                    <li><strong>git merge [branch]</strong>: Merges changes from a specific branch into the current branch.</li>
+                    <li><strong>git rebase [branch]</strong>: Reapplies commits from the current branch on top of the specified branch.</li>
+                    <li><strong>git cherry-pick [commit]</strong>: Applies changes from a specific commit to the current branch.</li>
+                    <li><strong>git revert [commit]</strong>: Creates a new commit that undoes changes from a previous commit.</li>
+                    <li><strong>git stash</strong>: Stashes all changes in the working directory to save them temporarily.</li>
+                    <li><strong>git stash apply</strong>: Applies stashed changes back to the working directory.</li>
+                    <li><strong>git stash pop</strong>: Applies stashed changes and removes them from the stash list.</li>
+                    <li><strong>git pull --rebase</strong>: Fetches and rebases changes from a remote repository.</li>
+                    <li><strong>git rebase --abort</strong>: Aborts an ongoing rebase process.</li>
+                    <li><strong>git rebase --continue</strong>: Continues an ongoing rebase process after resolving conflicts.</li>
+                    <li><strong>git reset [commit]</strong>: Resets the current branch to a specific commit.</li>
+                    <li><strong>git merge --no-ff [branch]</strong>: Merges changes from a specific branch without creating a fast-forward commit.</li>
+                    <li><strong>git pull --no-commit</strong>: Fetches and merges changes from a remote repository without committing them.</li>
+                    <li><strong>git push --force-with-lease</strong>: Forces pushing changes to a remote repository, but only if the remote branch hasn't been updated by others.</li>
+                    <li><strong>git push --force</strong>: Forces pushing changes to a remote repository, overriding any existing changes.</li>
+                    <li><strong>git cherry-pick [commit]</strong>: Applies changes from a specific commit to the current branch.</li>
+                </ul>
+            </tr>
+        </div>
+
+        <div>
+            <tr>
+                <h3>14> Git Merge Strategies(Handling merge conflicts and strategies)</h3>
+                <ul>
+                    <li><strong>git merge [branch]</strong>: Merges changes from a specific branch into the current branch.</li>
+                    <li><strong>git merge --no-ff [branch]</strong>: Merges changes from a specific branch without creating a fast-forward commit.</li>
+                    <li><strong>git merge --squash [branch]</strong>: Merges changes from a specific branch but squashes all commits into a single commit.</li>
+                    <li><strong>git merge --strategy=recursive [branch]</strong>: Uses the recursive merge strategy (default).</li>
+                    <li><strong>git merge --strategy=ours [branch]</strong>: Uses the "ours" strategy, which keeps the current branch's changes in case of conflicts.</li>
+                    <li><strong>git merge --strategy=theirs [branch]</strong>: Uses the "theirs" strategy, which keeps the incoming branch's changes in case of conflicts.</li>
+                    <li><strong>git merge --abort</strong>: Aborts an ongoing merge process and resets the state to before the merge started.</li>
+                    <li><strong>git merge --continue</strong>: Continues an ongoing merge process after resolving conflicts.</li>
+                    <li><strong>git mergetool</strong>: Launches a visual tool to help resolve merge conflicts.</li>
+                    <li><strong>git diff --name-only --diff-filter=U</strong>: Lists files with merge conflicts.</li>
+                    <li><strong>git status</strong>: Shows the status of files in the working directory, including any merge conflicts.</li>
+                    <li><strong>git add [file]</strong>: Stages resolved files after fixing merge conflicts.</li>
+            </tr>
+        </div>
+
+        <div>
+            <tr>
+                <h3>15. Git bisect (Finding the commit that introduced a bug)</h3>
+                <ul>
+                    <li><strong>git bisect start</strong>: Starts the bisect process.</li>
+                    <li><strong>git bisect bad [commit]</strong>: Marks a commit as bad (introduced the bug).</li>
+                    <li><strong>git bisect good [commit]</strong>: Marks a commit as good (before the bug was introduced).</li>
+                    <li><strong>git bisect reset</strong>: Resets the bisect process to the original state.</li>
+                    <li><strong>git bisect log</strong>: Shows the log of bisect process.</li>
+                    <li><strong>git bisect visualize</strong>: Visualizes the current state of the bisect process.</li>
+                </ul>
+            </tr>
+        </div>
+
+        <div>
+            <tr>
+                <h3>16. Git hooks for Automation (pre-commit and post commit hooks)</h3>
+                <ul>
+                    <li><strong>pre-commit hooks</strong>: Scripts that run before a commit is made. They can be used to enforce code quality standards, run tests, or prevent commits with issues.</li>
+                    <li><strong>post-commit hooks</strong>: Scripts that run after a commit is made. They can be used to perform actions such as sending notifications, updating documentation, or triggering continuous integration builds.</li>
+                    <li><strong>pre-push hooks</strong>: Scripts that run before changes are pushed to a remote repository. They can be used to run tests, check for code quality, or prevent pushing changes that don't meet certain criteria.</li>
+                    <li><strong>post-merge hooks</strong>: Scripts that run after a merge is completed. They can be used to perform actions such as updating dependencies, running tests, or sending notifications about the merge.</li>
+                    
+                </ul>
+            </tr>
+        </div>
+
+        <div>
+            <tr>
+                <h3>17. Git clean and prune (removing untracked files and stale remote-tracking branches)</h3>
+                <ul>
+                    <li><strong>git clean -f</strong>: Removes untracked files from the working directory.</li>
+                    <li><strong>git clean -fd</strong>: Removes untracked files and directories from the working directory.</li>
+                    <li><strong>git clean -n</strong>: Shows what files would be removed by `git clean` without actually removing them.</li>
+                    <li><strong>git prune</strong>: Removes stale remote-tracking branches that no longer exist on the remote repository.</li>
+                    <li><strong>git prune --dry-run</strong>: Shows which branches would be pruned without actually pruning them.</li>
+                    <li><strong>git prune --expire [time]</strong>: Prunes branches that are older than the specified time.</li>
+                    <li><strong>git prune --aggressive</strong>: Prunes branches more aggressively, potentially removing more branches than the default behavior.</li>
+                    <li><strong>git gc</strong>: Garbage collects unused objects and optimizes the repository.</li>
+                </ul>
+            </tr>
+        </div>
+
+
+        <div>
+            <tr>
+                <h3>18. Git Archive (Creating a snapshot of Repository Contents)</h3>
+                <ul>
+                    <li><strong>git archive [branch-name] --format=zip -o [filename].zip</strong>: Creates a zip archive of the specified branch.</li>
+                    <li><strong>git archive [branch-name] --format=tar -o [filename].tar</strong>: Creates a tar archive of the specified branch.</li>
+                    <li><strong>git archive --format=tar [branch-name] | gzip > [filename].tar.gz</strong>: Creates a gzipped tar archive of the specified branch.</li>
+                    <li><strong>git archive --format=zip HEAD -o latest.zip</strong>: Creates a zip archive of the current HEAD.</li>
+                    <li><strong>git archive --format=tar HEAD | gzip > latest.tar.gz</strong>: Creates a gzipped tar archive of the current HEAD.</li>
+                    <li><strong>git archive --format=zip --prefix=[folder-name]/ HEAD -o latest.zip</strong>: Creates a zip archive with a specific folder prefix.</li>
+                    <li><strong>git archive --format=tar --prefix=[folder-name]/ HEAD | gzip > latest.tar.gz</strong>: Creates a gzipped tar archive with a specific folder prefix.</li>
+                    <li><strong>git archive --format=zip [commit] -o [filename].zip</strong>: Creates a zip archive of a specific commit.</li>
+                    <li><strong>git archive --format=tar [commit] | gzip > [filename].tar.gz</
+                </ul>
+            </tr>
+        </div>
+
+        <div>
+            <tr>
+                <h3>19. Git blame and annotate (tracing the history )</h3>
+                <ul>
+                    <li><strong>git blame [file]</strong>: Shows the author of each line in a file along with the commit hash and timestamp.</li>
+                    <li><strong>git annotate [file]</strong>: Alias for `git blame` (if configured).</li>
+                    <li><strong>git blame -L [start],[end] [file]</strong>: Shows blame information for a specific range of lines in a file.</li>
+                    <li><strong>git blame -w [file]</strong>: Ignores whitespace changes when blaming a file.</li>
+                    <li><strong>git blame --reverse [file]</strong>: Shows blame information in reverse order (from the most recent commit to the oldest).</li>
+                    <li><strong>git blame --show-name [file]</strong>: Shows the filename along with the blame information.</li>
+                    <li><strong>git blame --show-email [file]</strong>: Shows the email address of the author along with the blame information.</li>
+                    <li><strong>git blame --show-number [file]</strong>: Shows the line number along with the blame information.</li>
+                    <li><strong>git blame --show-date [file]</strong>: Shows the date of each commit along with the blame information.</li>
+                    <li><strong>git blame --show-summary [file]</strong>: Shows a summary of each commit along with the blame information.</li>
+                    <li><strong>git blame --show-stats [file]</strong>: Shows statistics about the commits that modified each line in a file.</li>
+                </ul>
+            </tr>
+        </div>
+        
+        <div>
+            <tr>
+                <h3>20. Git reflog (tracking changes in the head)</h3>
+                <ul>
+                    <li><strong>git reflog</strong>: Shows the history of changes to the HEAD reference.</li>
+                    <li><strong>git reflog show [branch-name]</strong>: Shows the reflog for a specific branch.</li>
+                    <li><strong>git reflog show --date=short [branch-name]</strong>: Shows the reflog for a specific branch with short dates.</li>
+                    <li><strong>git reflog show --all</strong>: Shows the reflog for all branches.</li>
+                    <li><strong>git reflog delete [ref]</strong>: Deletes a specific reference from the reflog.</li>
+                    <li><strong>git reflog expire --expire=now</strong>: Expires all reflog entries that are older than the specified time.</li>
+                </ul>
+            </tr>
+        </div>
+    </table>
+</div>
