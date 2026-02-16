@@ -1,50 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    background-color: rgba(47, 47, 88, 0.156);
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+}
+
+/* Navbar */
+.navbar {
+    background: #111827;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #3b82f6;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 40px;
+}
+
+/* Table */
+.table-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #3b82f6;
+    color: white;
+}
+
+/* Tools Section */
+.tools {
+    text-align: center;
+    padding: 40px 20px;
 }
 
 .tools-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
     padding: 20px;
 }
 
-.tools-container .box {
-    gap: 40px;
-    padding: 20px;
-}
-
-.tool-img {
-    width: 70px;
-    height: 70px;
-    border-radius: 15%;
-    object-fit: cover;
-    transition: 0.2s;
-    border: 5px solid #ddd;
-}
-
-.tool-img:hover {
-    transform: scale(2.0);
-    border-color: #d8f20d;
-}
-
 .box {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.box img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+}
+
+.box p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
     text-align: center;
-    display: inline-block;
-    border: 2px solid #0d04b6;
-    border-radius: 8px;
-    background-color: #bfc6cb;
+    padding: 20px;
+    background: #111827;
+    color: white;
 }
-
-.text {
-    padding: 5px;
-    font-weight: bolder;
-    color: #000;
-    bottom: 10px;
-    background-color: rgb(200, 233, 16);
-}
-
-
-    
