@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ansible 0 to Hero - Study Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ansible complete guide</h1>
+
+    <div class="section">
+        <h2>Introduction to Ansible</h2>
+        <p>
+            Ansible is an open-source automation tool used for configuration management,
+            application deployment, and infrastructure automation.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Ansible Setup & Commands</h2>
+        <ul>
+            <li><code>sudo apt update && sudo apt install ansible -y</code> – Install Ansible.</li>
+            <li><code>ansible --version</code> – Check installed version.</li>
+            <li><code>ansible all -m ping</code> – Test connectivity.</li>
+            <li><code>ansible-playbook playbook.yml</code> – Run playbook.</li>
+            <li><code>ansible-galaxy install role_name</code> – Install role from Galaxy.</li>
+        </ul>
+        <h2>Use full command</h2>
+        <ul>
+            <li><code>ansible-playbook --syntax-check playbook.yml</code> – Check playbook syntax.</li>
+            <li><code>ansible localhost -m ping</code> – Perform a ping test on localhost.</li>
+            <li><code>ansible all -m ping</code> – Perform a ping test on all hosts.</li>
+            <li><code>ansible IP -m ping</code> – Perform a ping test on a specific IP address.</li>
+            <li><code>ansible IP -m copy -a "src=/path/to/file dest=/tmp/file"</code> – Copy a file to a specific IP address.</li>
+            <li><code>ansible all -m service -a "name=nginx state=reload"</code> – Reload nginx service on all hosts.</li>
+            <li><code>ansible all -m shell -a "/tmp/script.sh"</code> – Execute a script on all hosts.</li>
+            <li><code>ansible all -m command -a "free -h"</code> – Display system memory usage on all hosts.</li>
+            <li><code>ansible all -m apt -a "name=vim state=present"</code> – Install vim package on all hosts.</li>
+            <li><code>ansible all -m firewalld -a "state=enabled"</code> – Enable firewall on all hosts.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>First Playbook Syntax</h2>
+        <p><strong>File:</strong> firstplaybook.yml</p>
+
+        <pre><code>
+        ---
+        - name: First Basic Playbook
+          hosts: localhost
+
+          tasks:
+            - name: Test connectivity
+            ping:
+         
+        # run playbook command: <code>ansible-playbook firstplaybook.yml</code>
+        </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Add Multiple tasks in one playbook</h2>
+        <p><strong>File:</strong> multiple_tasks_playbook.yml</p>
+        <pre><code>
+        ---
+        - name: Multiple Tasks Playbook
+          hosts: localhost
+
+          tasks:
+            - name: Test connectivity
+              ping:
+            - name: Display system info
+              command: uname -a
+
+        # run playbook command: <code>ansible-playbook multiple_tasks_playbook.yml</code>
+        </code></pre>
+    </div>
+
+    <div>
+        <h2>App installation</h2>
+        <p><strong>Example:</strong> Install a package using apt module.</p>
+        <pre><code>
+        ---
+        - name: Install Apache
+          hosts: localhost
+          become: yes
+
+          tasks:
+            - name: Install Apache
+              apt:
+                name: apache2
+                state: present
+        - name: Start Apache
+              service:
+                name: apache2
+                state: started
+                enabled: yes
+
+        # run playbook command: <code>ansible-playbook install_apache.yml</code>
+        </code></pre>
+    </div>
+
+    <div>
+        <h2>Remote server configuration</h2>
+        <p><strong>file:</strong> remote_server_config.yml</p>
+        <pre><code>
+        ---
+        - name: Configure Remote Server
+          hosts: all
+          become: yes
+
+          tasks:
+            - name: Inatall Nginx
+              apt:
+                name: nginx
+                state: present
+            - name: Start Nginx
+              service:
+                name: nginx
+                state: started
+                enabled: yes
+        # run playbook command: <code>ansible-playbook remote_server_config.yml</code>
+        </code></pre>
+    </div>
+
+    <div>
+        <h2>Copy file remote server</h2>
+        <p><strong>file:</strong> copy_file_remote.yml</p>
+        <pre><code>
+        ---
+        - name: Copy file to remote server
+          hosts: all
+          become: yes
+
+          tasks:
+            - name: Copy file
+              copy:
+                src: /home/pankaj/Desktop/file.txt
+                dest: /tmp/file.txt
+
+                owner: pankaj
+                group: pankaj
+                mode: '0644'
+
+        # run playbook command: <code>ansible-playbook copy_file_remote.yml</code>
+        </code></pre>
+    </div>
+
+    <div>
+        <h2>Tacking Backup of Files</h2>
+        <p><strong>Example:</strong> Backup a file using the copy module.</p>
+        <pre><code>
+        ---
+        - name: Backup a file
+          hosts: all
+          become: yes
+
+          tasks:
+            - name: Backup file
+              copy:
+                src: /home/pankaj/Desktop/file.txt
+                dest: /home/pankaj/backup/file_backup_$(date +%Y%m%d).txt
+                owner: pankaj
+                group: pankaj
+                mode: '0644'
+        # run playbook command: <code>ansible-playbook backup_file.yml</code>
+        </code></pre>
+    </div>
+
+    <div>
+        <h2>Create a directory, file, and set permissions and remove: absent</h2>
+        <p><strong>file:</strong> create_directory.yml</p>
+        <pre><code>
+        ---
+        - name: Create a directory
+          hosts: localhost
+          become: yes
+
+          tasks:
+            - name: Create directory
+              file:
+                path: /home/pankaj/ansible_test_dir
+                state: directory #file use state: touch, delete use state: absent
+                owner: pankaj
+                group: pankaj
+                mode: '0755'
+        # run playbook command: <code>ansible-playbook create_directory.yml</code>
+        </code></pre>
+    </div>
+
+    <div>
+        <h2>Run Scripts on remote servers</h2>
+        <p><strong>file:</strong> run_script_remote.yml</p>
+        <pre><code>
+        ---
+        - name: Run a script on remote server
+          hosts: all
+          become: yes
+
+          tasks:
+            - name: Run script
+              shell: /home/pankaj/scripts/myscript.sh
+
+        # run playbook command: <code>ansible-playbook run_script_remote.yml</code>
+        </code></pre>
+    </div>
+
+    <div>
+        <h2>Adding Cron Jobs on Remote Servers</h2>
+        <p><strong>file:</strong> add_cron_job.yml</p>
+        <pre><code>
+        ---
+        - name: Add a cron job on remote server
+          hosts: all
+          become: yes
+
+          tasks:
+            - name: Add cron job
+              cron:
+                name: "My Cron Job"
+                minute: "0"
+                hour: "2"
+                day: "*"
+                month: "*"
+                weekday: "*"
+                user: pankaj
+                job: "/home/pankaj/scripts/myscript.sh"
+
+        # run playbook command: <code>ansible-playbook add_cron_job.yml</code>
+        </code></pre>
+    </div>
+
+    <div>
+        <h2>Set Environment Variables</h2>
+        <p><strong>file:</strong> set_env_vars.yml</p>
+        <pre><code>
+        ---
+        - name: Set environment variables
+          hosts: all
+          become: yes
+
+          tasks:
+            - name: Set environment variable
+              lineinfile:
+                path: /home/pankaj/.bashrc
+                line: "export MY_VAR=my_value"
+                create: yes
+
+        # run playbook command: <code>ansible-playbook set_env_vars.yml</code>
+        </code></pre>
+    </div>
+
+    <div>
+        <h2>User Management adduser and group</h2>
+        <p><strong>file:</strong> user_management.yml</p>
+        <pre><code>
+        ---
+        - name: Manage users and groups
+          hosts: all
+          become: yes
+
+          tasks:
+            - name: Create a group
+              group:
+                name: mygroup
+                state: present
+
+            - name: Create a user
+              user:
+                name: myuser
+                group: mygroup
+                comment: "My Ansible User Account"
+                shell: /bin/bash
+                dir: /home/myuser
+                state: present
+
+        # run playbook command: <code>ansible-playbook user_management.yml</code>
+        </code></pre>
+    </div>
+
+    <div>
+        <h2>User password management</h2>
+        <p><strong>file:</strong> set_user_password.yml</p>
+        <pre><code>
+        ---
+        - name: Set user password
+          hosts: all
+          become: yes
+
+          tasks:
+            - name: Set user password
+              user:
+                name: myuser
+                update_password: always
+                password: "{{ 'mypassword' | password_hash('sha512') }}"
+
+        # run playbook command: <code>ansible-playbook set_user_password.yml</code>
+        </code></pre>
+    </div>
+
+    <div>
+        <h2>Processor Management</h2>
+        <p><strong>file:</strong> manage_processes.yml</p>
+        <pre><code>
+        ---
+        - name: Manage processes
+          hosts: all
+          become: yes
+
+          tasks:
+            - name: Check if a process is running
+              ignore_errors: yes
+              shell: "pgrep -f nginx"
+
+            - name: Start the process if not running
+              service:
+                name: nginx
+                state: started
+        # run playbook command: <code>ansible-playbook manage_processes.yml</code>
+        </code></pre>
+    </div>
+
+    <div>
+        <h2>Download Files From Internet</h2>
+        <p><strong>file:</strong> download_files.yml</p>
+        <pre><code>
+        ---
+        - name: Download files from internet
+          hosts: all
+          become: yes
+
+          tasks:
+            - name: Download a file
+              get_url:
+                url: "https://example.com/file.zip"
+                dest: "/home/pankaj/downloads/file.zip"
+
+        # run playbook command: <code>ansible-playbook download_files.yml</code>
+        </code></pre>
+    </div>
+
+    <div>
+        <h2>Firewall Management</h2>
+        <p><strong>file:</strong> manage_firewall.yml</p>
+        <pre><code>
+        ---
+        - name: Manage firewall rules
+          hosts: all
+          become: yes
+          tasks:
+            - name: Allow HTTP traffic
+              firewalld:
+                service: http
+                permanent: yes
+                state: enabled
+                immediate: yes
+            - name: Allow HTTPS traffic
+              firewalld:
+                service: https
+                permanent: yes
+                state: enabled
+                immediate: yes
+            - name: Reload firewalld
+              firewalld:
+                state: reloaded
+        # run playbook command: <code>ansible-playbook manage_firewall.yml</code>
+        </code></pre>  
+    </div>
+
+    <div>
+        <h2>Tags in Ansible</h2>
+        <p><strong>file:</strong> ansible_tags.yml</p>
+        <pre><code>
+        ---
+        - name: Example Playbook with Tags
+          hosts: all
+          become: yes
+
+          tasks:
+            - name: Install Apache
+              apt:
+                name: apache2
+                state: present
+              tags: install
+
+            - name: Start Apache
+              service:
+                name: apache2
+                state: started
+                enabled: yes
+              tags: start
+        # run playbook command: <code>ansible-playbook ansible_tags.yml --tags "install"</code>
+        # run playbook command: <code>ansible-playbook ansible_tags.yml --list-tags</code>
+        # run playbook command: <code>ansible-playbook ansible_tags.yml --skip-tags "start"</code>
+        </code></pre>
+    </div>
+
+    <div>
+        <h2>Variables in Ansible</h2>
+        <p><strong>file:</strong> ansible_variables.yml</p>
+        <pre><code>
+        ---
+        - name: Example Playbook with Variables
+          hosts: all
+          become: yes
+
+          vars:
+            - app: "Ansible", "nginx", "mysql", "vim"
+
+          tasks:
+            - name: Install an application
+              apt:
+                name: "{{ app }}"
+                state: present
+              tags: install
+
+            - name: Start the application
+              service:
+                name: "{{ app }}"
+                state: started
+                enabled: yes
+              tags: start
+
+        # Run playbook command: <code>ansible-playbook ansible_variables.yml</code>
+        </code></pre>
+    </div>
+
+    <div>
+    <h2>Handlers in Ansible</h2>
+    <p><strong>File:</strong> firewall.yml</p>
+      <pre><code>
+      ---
+      - name: Firewall Changes
+        hosts: all
+        become: yes
+
+        tasks:
+          - name: Enable HTTP Service in Firewalld
+            firewalld:
+              port: 80/tcp
+              permanent: true
+              state: enabled
+            notify:
+              - Reload firewalld
+
+        handlers:
+          - name: Reload firewalld
+            service:
+              name: firewalld
+              state: reloaded
+
+        # Run Playbook Command:</code>ansible-playbook firewall.yml </code>
+      </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Resources</h2>
+        <ul>
+            <li><a href="https://docs.ansible.com/">Ansible Documentation</a></li>
+            <li><a href="https://github.com/ansible/ansible">Ansible Modules</a></li>
+            <li><a href="https://galaxy.ansible.com/">Ansible Galaxy</a></li>
+            <li><a href="https://www.ansible.com/community">Ansible Community</a></li>
+            <li><a href="https://stackoverflow.com/questions/tagged/ansible">Stack Overflow (Ansible)</a></li>
+        </ul>
+    </div>
+
+
+
+</body>
+</html>
